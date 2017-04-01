@@ -16,7 +16,8 @@ from keras.models import Sequential, Model
 from keras.layers import Input
 from keras import backend as K
 import numpy as np
-
+from utils import *
+from dcgan import *
 from visualize import *
 
 class WassersteinGAN(object):
@@ -130,11 +131,10 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    data = importlib.import_module(args.data)
     model = importlib.import_module(args.data + '.' + args.model)
 
-    x_sampler = data.DataSampler()
-    z_sampler = data.NoiseSampler()
+    x_sampler = DataSampler()
+    z_sampler = NoiseSampler()
 
     discriminator = model.Discriminator()
     generator = model.Generator()

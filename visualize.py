@@ -15,7 +15,6 @@ def split(x):
         if x % a == 0:
             return a, x / a
 
-
 def grid_transform(x, size):
     a, b = split(x.shape[0])
     h, w, c = size[0], size[1], size[2]

@@ -1,7 +1,6 @@
 import numpy as np
 from tensorflow.examples.tutorials.mnist import input_data
 
-
 mnist = input_data.read_data_sets('mnist')
 
 class DataSampler(object):
@@ -17,3 +16,4 @@ class DataSampler(object):
 class NoiseSampler(object):
     def __call__(self, batch_size, z_dim):
         return np.random.uniform(-1.0, 1.0, [batch_size, z_dim])
+

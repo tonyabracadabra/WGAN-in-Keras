@@ -49,6 +49,7 @@ class Discriminator(object):
 
         return model
 
+
 class Generator(object):
     def __init__(self):
         self.z_dim = 100
