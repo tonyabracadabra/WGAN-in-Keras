@@ -1,3 +1,6 @@
+# Copy from https://github.com/jiamings/wgan/blob/master/visualize.py
+# Thanks!
+
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')

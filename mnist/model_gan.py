@@ -1,3 +1,7 @@
+__author__ = "Xupeng Tong"
+__copyright__ = "Copyright 2017, WGAN with Keras"
+__email__ = "xtong@andrew.cmu.edu"
+
 from keras.layers.convolutional import Conv2D, Conv2DTranspose
 from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.core import Dense, Flatten, Reshape, Activation
@@ -16,28 +20,6 @@ class Discriminator(object):
         self.regularizer = regularizers.l2(2.5e-5)
 
     def __call__(self):
-        # input = Input(shape=(784,))
-        # x = Reshape((28, 28, 1))(input)
-        # x = Conv2D(64, kernel_size=(4, 4), strides=(2, 2), \
-        #     kernel_initializer=self.initializer)(x)
-        # x = LeakyReLU()(x)
-
-        # x = Conv2D(128, kernel_size=(4, 4), strides=(2, 2), \
-        #     kernel_initializer=self.initializer)(x)
-        # x = LeakyReLU()(x)
-
-        # x = BatchNormalization()(x)
-        # x = Flatten()(x)
-
-        # x = Dense(1024, kernel_initializer=self.initializer)(x)
-        # x = LeakyReLU()(x)
-
-        # x = BatchNormalization()(x)
-
-        # output = Dense(2, activation='softmax')(x)
-
-        # model = Model(input=input, output=output)
-
         model = Sequential()
         model.add(Reshape((28, 28, 1), input_shape=(784,)))
         # Convolution Layer 1
@@ -78,32 +60,6 @@ class Generator(object):
         self.regularizer = regularizers.l2(2.5e-5)
 
     def __call__(self):
-        # input = Input(shape=(self.z_dim,))
-
-        # x = Dense(1024, kernel_initializer=self.initializer, \
-        #     kernel_regularizer=self.regularizer)(input)
-        # x = BatchNormalization()(x)
-        # x = Activation('relu')(x)
-
-        # x = Dense(7 * 7 * 128, kernel_initializer=self.initializer, \
-        #     kernel_regularizer=self.regularizer)(x)
-        # x = Reshape((7, 7, 128))(x)
-
-        # x = BatchNormalization()(x)
-        # x = Activation('relu')(x)
-
-        # x = Conv2DTranspose(64, kernel_size=(4, 4), strides=(2, 2), padding='same',\
-        #     kernel_initializer=self.initializer, kernel_regularizer=self.regularizer)(x)
-        # x = BatchNormalization()(x)
-        # x = Activation('relu')(x)
-
-        # x = Conv2DTranspose(1, kernel_size=(4, 4), strides=(2, 2), padding='same',\
-        #     kernel_initializer=self.initializer, kernel_regularizer=self.regularizer)(x)
-        # x = Activation('sigmoid')(x)
-        # output = Reshape((784,))(x)
-
-        # model = Model(input=input, output=output)
-
         model = Sequential()
 
         model.add(Dense(1024, kernel_initializer=self.initializer, \

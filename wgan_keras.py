@@ -1,3 +1,9 @@
+__author__ = "Xupeng Tong"
+__copyright__ = "Copyright 2017, WGAN with Keras"
+__email__ = "xtong@andrew.cmu.edu"
+
+# Structure inspired by https://github.com/jiamings/wgan
+
 import os
 import time
 import argparse
